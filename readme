@@ -1,1 +1,13 @@
-words to start it off
+UMCHS Inventory Tracking System
+
+A complete inventory management solution with:
+- Web application for desktop users
+- Mobile app for on-the-go tracking
+- RESTful API backend
+- Multi-location support
+- Purchase order management
+- Budget tracking
+- Item request system
+- Stock level alerts
+
+See README.md for full documentation and setup instructions.

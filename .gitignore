@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment variables
+.env
+backend/.env
+
+# Database
+backend/data/
+*.db
+*.sqlite
+
+# Build outputs
+build/
+dist/
+web/build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Expo
+mobile/.expo/
+mobile/dist/
+
+# Misc
+.cache/
+*.orig
