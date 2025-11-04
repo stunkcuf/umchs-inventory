@@ -1,0 +1,40 @@
+# fly.toml app configuration file
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+
+app = 'umchs-inventory'
+primary_region = 'ams'
+
+[build]
+  [build.args]
+    NODE_VERSION = '18'
+
+[deploy]
+  release_command = 'npm run setup'
+
+[env]
+  PORT = '8080'
+  NODE_ENV = 'production'
+  DB_PATH = '/data/inventory.db'
+
+[mounts]
+  source = 'umchs_inventory_data'
+  destination = '/data'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+  [http_service.concurrency]
+    type = 'connections'
+    hard_limit = 25
+    soft_limit = 20
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
