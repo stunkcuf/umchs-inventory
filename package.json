@@ -1,0 +1,31 @@
+{
+  "name": "umchs-inventory",
+  "version": "1.0.0",
+  "description": "Inventory tracking system for supplies with purchasing, budgets, and location management",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "web",
+    "mobile",
+    "shared"
+  ],
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../web && npm install && cd ../mobile && npm install",
+    "backend": "cd backend && npm start",
+    "web": "cd web && npm start",
+    "mobile": "cd mobile && npm start",
+    "dev": "concurrently \"npm run backend\" \"npm run web\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "inventory",
+    "tracking",
+    "supplies",
+    "purchasing",
+    "budget"
+  ],
+  "author": "",
+  "license": "MIT"
+}
