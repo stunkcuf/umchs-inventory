@@ -16,7 +16,7 @@ fly auth login
 ### 2. Create the app (if not already created)
 
 ```bash
-fly apps create umchs-inventory
+fly apps create umchs-inventory-goypog
 ```
 
 ### 3. Create a persistent volume for the database
@@ -63,12 +63,12 @@ fly logs
 
 Your API will be available at:
 ```
-https://umchs-inventory.fly.dev
+https://umchs-inventory-goypog.fly.dev
 ```
 
 Test the health endpoint:
 ```bash
-curl https://umchs-inventory.fly.dev/api/health
+curl https://umchs-inventory-goypog.fly.dev/api/health
 ```
 
 ## Default Login
@@ -182,7 +182,7 @@ fly status
 
 Verify health endpoint:
 ```bash
-curl https://umchs-inventory.fly.dev/api/health
+curl https://umchs-inventory-goypog.fly.dev/api/health
 ```
 
 ## Connecting the Web/Mobile Apps
@@ -192,7 +192,7 @@ curl https://umchs-inventory.fly.dev/api/health
 Update `web/src/services/api.js`:
 
 ```javascript
-const API_URL = 'https://umchs-inventory.fly.dev/api';
+const API_URL = 'https://umchs-inventory-goypog.fly.dev/api';
 ```
 
 ### Mobile App
@@ -200,7 +200,7 @@ const API_URL = 'https://umchs-inventory.fly.dev/api';
 Update `mobile/src/services/api.js`:
 
 ```javascript
-const API_URL = 'https://umchs-inventory.fly.dev/api';
+const API_URL = 'https://umchs-inventory-goypog.fly.dev/api';
 ```
 
 Deploy the web app to:
