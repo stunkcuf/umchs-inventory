@@ -5,8 +5,8 @@ services:
     env: node
     region: oregon
     plan: free
-    buildCommand: cd backend && npm install && npm run init-db
-    startCommand: cd backend && npm start
+    buildCommand: npm install && npm run init-db && npm run create-admin
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production

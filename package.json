@@ -14,7 +14,10 @@
     "backend": "cd backend && npm start",
     "web": "cd web && npm start",
     "mobile": "cd mobile && npm start",
-    "dev": "concurrently \"npm run backend\" \"npm run web\""
+    "dev": "concurrently \"npm run backend\" \"npm run web\"",
+    "start": "cd backend && npm start",
+    "init-db": "cd backend && npm run init-db",
+    "create-admin": "cd backend && npm run create-admin"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
