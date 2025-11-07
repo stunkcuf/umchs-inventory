@@ -154,6 +154,19 @@ const initDatabase = () => {
           FOREIGN KEY (location_id) REFERENCES locations(id),
           FOREIGN KEY (performed_by) REFERENCES users(id)
         )
+      `);
+
+      // Maintenance credentials table (for external maintenance system)
+      db.run(`
+        CREATE TABLE IF NOT EXISTS maintenance_credentials (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          user_id INTEGER UNIQUE NOT NULL,
+          maintenance_username TEXT NOT NULL,
+          maintenance_password TEXT NOT NULL,
+          created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+          updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+          FOREIGN KEY (user_id) REFERENCES users(id)
+        )
       `, (err) => {
         if (err) {
           console.error('Error creating tables:', err);

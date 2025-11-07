@@ -1,0 +1,19 @@
+# Render.com deployment configuration
+services:
+  - type: web
+    name: umchs-maintenance-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run init-db && npm run create-admin
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_PATH
+        value: ./inventory.db
+    healthCheckPath: /api/health

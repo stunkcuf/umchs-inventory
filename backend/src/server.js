@@ -21,6 +21,7 @@ app.use('/api/locations', require('./routes/locations'));
 app.use('/api/budgets', require('./routes/budgets'));
 app.use('/api/purchase-orders', require('./routes/purchaseOrders'));
 app.use('/api/requests', require('./routes/requests'));
+app.use('/api/maintenance', require('./routes/maintenance'));
 
 // Health check
 app.get('/api/health', (req, res) => {
