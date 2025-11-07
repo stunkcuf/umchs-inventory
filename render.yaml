@@ -5,6 +5,7 @@ services:
     env: node
     region: oregon
     plan: free
+    # Don't use Docker, use native Node buildpack
     buildCommand: npm install && npm run init-db && npm run create-admin
     startCommand: npm start
     envVars:
@@ -17,3 +18,5 @@ services:
       - key: DATABASE_PATH
         value: ./inventory.db
     healthCheckPath: /api/health
+    # Disable Docker to use native Node.js buildpack
+    dockerfilePath: ""
